@@ -127,8 +127,8 @@ def get_radar_chart(input_data):
     
     
 def add_predictions(input_data):
-  model = pickle.load(open("model/model.pkl", "rb"))
-  scaler = pickle.load(open("model/scaler.pkl", "rb"))
+  model = pickle.load(open("model.pkl", "rb"))
+  scaler = pickle.load(open("scaler.pkl", "rb"))
   
   input_array = np.array(list(input_data.values())).reshape(1, -1)
   
@@ -182,4 +182,5 @@ def main():
     with col2:
         add_predictions(input_data)
 if __name__ == '__main__':
+
     main()
